@@ -1,5 +1,6 @@
 "use client"
 
+import "leaflet/dist/leaflet.css"
 import { useEffect, useRef, useState } from "react"
 import { Location } from "@/types"
 import { locations, REGION_COLORS } from "@/data/locations"
@@ -17,7 +18,6 @@ export default function Map() {
 
     const initMap = async () => {
       const L = (await import("leaflet")).default
-      await import("leaflet/dist/leaflet.css")
 
       const map = L.map("map", {
         center: [20, 80],
@@ -53,16 +53,13 @@ export default function Map() {
 
       const icon = L.divIcon({
         className: "",
-        html: `
-          <div style="
-            width:14px; height:14px; border-radius:50%;
-            background:${color};
-            border: 2px solid ${color}88;
-            box-shadow: 0 0 0 4px ${color}22;
-            cursor:pointer;
-            transition: transform 0.15s;
-          "></div>
-        `,
+        html: `<div style="
+          width:14px; height:14px; border-radius:50%;
+          background:${color};
+          border: 2px solid ${color}88;
+          box-shadow: 0 0 0 4px ${color}22;
+          cursor:pointer;
+        "></div>`,
         iconSize: [14, 14],
         iconAnchor: [7, 7],
       })
@@ -117,13 +114,16 @@ export default function Map() {
 
       <RegionFilter active={activeRegion} onChange={handleRegionChange} />
 
-      {/* Title */}
-      <div style={{
-        position: "absolute", bottom: 24, left: 16, zIndex: 1000,
-      }}>
+      <div style={{ position: "absolute", bottom: 24, left: 16, zIndex: 1000 }}>
         <p style={{ fontSize: 11, color: "rgba(255,255,255,0.2)", letterSpacing: "0.5px" }}>
           WORLD HISTORY MAP · PROTOTYPE
         </p>
+      </div>
+
+      <LocationPanel location={selected} onClose={() => setSelected(null)} />
+    </div>
+  )
+}        </p>
       </div>
 
       <LocationPanel location={selected} onClose={() => setSelected(null)} />
