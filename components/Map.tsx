@@ -123,7 +123,8 @@ export default function Map() {
       <LocationPanel location={selected} onClose={() => setSelected(null)} />
     </div>
   )
-}        </p>
+} 
+      </p>
       </div>
 
       <LocationPanel location={selected} onClose={() => setSelected(null)} />
