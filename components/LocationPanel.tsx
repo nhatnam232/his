@@ -1,4 +1,5 @@
 "use client"
+
 import { Location } from "@/types"
 import { REGION_COLORS, REGION_LABELS } from "@/data/locations"
 
