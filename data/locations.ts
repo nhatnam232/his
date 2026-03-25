@@ -1,24 +1,6 @@
-import { Location } from "@/types"
+import type { Location } from "@/types"
 
-export const REGION_COLORS: Record<string, string> = {
-  "southeast-asia": "#1d9e75",
-  "europe": "#d85a30",
-  "east-asia": "#ba7517",
-  "middle-east": "#7f77dd",
-  "africa": "#d85a30",
-  "americas": "#ba7517",
-  "oceania": "#378add",
-}
-
-export const REGION_LABELS: Record<string, string> = {
-  "southeast-asia": "Đông Nam Á",
-  "europe": "Châu Âu",
-  "east-asia": "Châu Á",
-  "middle-east": "Trung Đông",
-  "africa": "Châu Phi",
-  "americas": "Châu Mỹ",
-  "oceania": "Đại Dương Châu",
-}
+export { REGION_COLORS, REGION_LABELS } from "@/lib/constants"
 
 export const locations: Location[] = [
   {
