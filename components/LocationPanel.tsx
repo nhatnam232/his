@@ -1,5 +1,6 @@
 "use client"
-
+import { Location } from "@/types"
+import { REGION_COLORS, REGION_LABELS } from "@/data/locations"
 
 const TYPE_LABELS: Record<string, string> = {
   empire: "Đế chế",
